@@ -31,13 +31,13 @@ command:
     # Consider re-merging them if this doesn't work.
     3: 
         name: INTERNAL_REF
-            length: 1
-                values: 
-                    0: OFF
-                    1: ON
+        length: 1
+            values: 
+                0: OFF
+                1: ON
     2:
-        name: AD_CONV
-            length: 1
-                values:
-                    0: OFF
-                    1: ON
+        name: AD_CONV        
+        length: 1
+        values:
+            0: OFF
+            1: ON
