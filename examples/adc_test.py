@@ -6,19 +6,31 @@ import i2c_device
 
 
 def analog_read():
-        return dev.registers['ADDR'].read()
-
+        dev.registers['READ'].write()
+        return dev.registers['READ'].read()
 
 dev = i2c_device.I2CDevice(1,0x48
             ,config='adc_ads7830_i2c.yaml')
+print "test"
 
-
+enable = dev.registers['READ']
+print "write"
+enable.write()
+print "read"
+print enable.read
+"""
+enable.write('SD', 'DIFFERENTIAL')
+enable.write('CHANNEL','ONE')
+enable.write('INTERNAL_REF', 'ON')
+enable.write('AD_CONV', 'ON')
+"""
 
 t0 = time.time()
 print "Begin"
 while True:
+    break
     elapsed = time.time() - t0
     value = analog_read()
-    print "[{:8.3f}]: {:5.3f}".format(elapsed, value)
+    print "Elapsed: ", elapsed, "Value: ", value
     time.sleep(0.1)
 print "Done"

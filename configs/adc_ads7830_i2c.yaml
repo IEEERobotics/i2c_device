@@ -3,13 +3,14 @@ url: "http://www.ti.com/product/ads7830"
 addresses: [0x48]
 
 registers:
-    0x12:
+    0x48:
         name: READ
-        description: Read value of currently selected channel.
+        description: Read value of currently selected channel
+        type: int8
     0x48:
         name: ADDR
         access: [read]
-        type: uint16
+        type: int8
 command:
     7:
         name: SD
