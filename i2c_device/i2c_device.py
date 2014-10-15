@@ -74,7 +74,7 @@ class I2CDevice(object):
         except IOError:
             #Unable to communicate. Some error.
             #Hardware possibly disconnected
-            data = "Error"
+            data = 0
         return data
 
     # this doesn't work on dmcc!
@@ -89,7 +89,7 @@ class I2CDevice(object):
         except IOError:
             #Unable to communicate. Some error.
             #Hardware possibly disconnected
-            data = "Error"
+            data = 0
         return data
 
     def write_byte(self, register, value):
@@ -98,7 +98,7 @@ class I2CDevice(object):
             success = self.bus.write_byte_data(self.address
                                               ,register, value)
         except IOError:
-            success = "Error"
+            success = 0
         return success
  
     def __str__(self):
