@@ -69,7 +69,12 @@ class I2CDevice(object):
         # TODO: how does this two call sequence compare to read_byte_data(reg,comm)?
         #self.bus.write_byte(self.address, comm)  # tell the device what we want to read
         #data = self.bus.read_byte(self.address)  # then read it
-        data = self.bus.read_byte_data(self.address, comm)
+        try:
+            data = self.bus.read_byte_data(self.address, comm)
+        except IOError:
+            #Unable to communicate. Some error.
+            #Hardware possibly disconnected
+            data = "Error"
         return data
 
     # this doesn't work on dmcc!
@@ -78,14 +83,25 @@ class I2CDevice(object):
         #comm = register | self.auto_inc | self.comm_base
         comm = register | self.comm_base
         #print " Comm: {:08b}".format(comm)
-        data = self.bus.read_word_data(self.address, comm)
+        try:
+            data = self.bus.read_word_data(self.address, comm)
+        except IOError:
         #print " Word: {:016b}".format(data)
+        except IOError:
+            #Unable to communicate. Some error.
+            #Hardware possibly disconnected
+            data = "Error"
         return data
 
     def write_byte(self, register, value):
         register |= self.comm_base
-        return self.bus.write_byte_data(self.address, register, value)
-
+        try:
+            success = self.bus.write_byte_data(self.address
+                                              ,register, value)
+        except IOError:
+            success = "Error"
+        return success
+ 
     def __str__(self):
         return "I2C device at {}-{:#04x} '{}'".format(
                 self.busnum, self.address, self.config['name'] )
