@@ -85,7 +85,6 @@ class I2CDevice(object):
         #print " Comm: {:08b}".format(comm)
         try:
             data = self.bus.read_word_data(self.address, comm)
-        except IOError:
         #print " Word: {:016b}".format(data)
         except IOError:
             #Unable to communicate. Some error.
