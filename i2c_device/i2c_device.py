@@ -71,6 +71,7 @@ class I2CDevice(object):
         #data = self.bus.read_byte(self.address)  # then read it
         try:
             data = self.bus.read_byte_data(self.address, comm)
+            break
         except IOError:
             #Unable to communicate. Some error.
             #Hardware possibly disconnected
@@ -85,6 +86,7 @@ class I2CDevice(object):
         #print " Comm: {:08b}".format(comm)
         try:
             data = self.bus.read_word_data(self.address, comm)
+            break
         #print " Word: {:016b}".format(data)
         except IOError:
             #Unable to communicate. Some error.
@@ -96,7 +98,8 @@ class I2CDevice(object):
         register |= self.comm_base
         try:
             success = self.bus.write_byte_data(self.address
-                                              ,register, value)
+                                      ,register, value)
+            break
         except IOError:
             success = 0
         return success
