@@ -1,2 +1,3 @@
-name: Dual Motor Control Cape
+name: Compass
 url: "https://www.sparkfun.com/products/retired/7915"
+addresses: [0x42, 0x43] #42 is read, 43 is write
