@@ -1,6 +1,6 @@
 name: ADC
 url: "http://www.ti.com/product/ads7830"
-addresses: [0x12]
+addresses: [0x48]
 
 registers:
     0x012:
