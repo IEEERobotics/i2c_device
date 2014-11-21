@@ -1,3 +1,8 @@
 name: ADC
 url: "http://www.ti.com/product/ads7830"
 addresses: [0x12]
+
+registers:
+    0x012:
+        name: READ
+        description: Read value of currently selected channel.
