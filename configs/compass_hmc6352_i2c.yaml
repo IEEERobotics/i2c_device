@@ -4,6 +4,31 @@ url: "https://www.sparkfun.com/products/retired/7915"
 #Only because the r/w bit is baked into that already.
 addresses: [0x21] 
 
+#This device uses EEPROM memory. Work like registers. 
+#They are non-volatile
+EEPROM:
+    0x00: 
+        name: I2C_ADDRESS
+        access: [read]
+    0x01:
+        name: X
+        access: [read]
+    0x03:
+        name: Y
+        access: [read]
+    0x05:
+        name: TIME_DELAY
+        access: [read,write]
+    0x06:
+        name: SUMMED_MEASUREMENTS
+        access: [read]
+    0x07:
+        name: SOFTWARE_VERSION
+        access: [read]
+    0x08:
+        name: OP_MODE
+        access: [read, write]
+
 commands:
     0x77:
         name: WRITE_EE
