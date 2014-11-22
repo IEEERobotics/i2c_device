@@ -6,3 +6,34 @@ registers:
     0x012:
         name: READ
         description: Read value of currently selected channel.
+
+command:
+    7:
+        name: SD
+        length: 1
+        values:
+            0: DIFFERENTIAL
+            1: SINGLE_ENDED
+    6: #[6:5]
+        name: CHANNEL
+            length: 3
+            # May not be necessary, just channel selection.
+            values: 
+                0b00: ONE
+                0b01: TWO
+                0b10: THREE
+                0b11: FOUR
+    # Manual lists [3,2] as PD, split up for clarity.
+    # Consider re-merging them if this doesn't work.
+    3: 
+        name: INTERNAL_REF
+            length: 1
+                values: 
+                    0: OFF
+                    1: ON
+    2:
+        name: AD_CONV
+            length: 1
+                values:
+                    0: OFF
+                    1: ON
