@@ -1,3 +1,41 @@
 name: Compass
 url: "https://www.sparkfun.com/products/retired/7915"
-addresses: [0x42, 0x43] #42 is write, 43 is read
+#Note, Datasheet specifies 42, 43 as write/read addresses
+#Only because the r/w bit is baked into that already.
+addresses: [0x21] 
+
+commands:
+    0x77:
+        name: WRITE_EE
+        description: Write to EEPROM mem
+    0x72:
+        name: READ_EE
+        description: read from EEPROM mem
+    0x47:
+        name: WRITE_RAM
+        description: Write to RAM regs.
+    0x67:
+        name: READ_RAM
+        description: Read from RAM regs.
+    0x53:
+        name: SLEEP
+        description: Enter device into sleep mode.
+    0x57:
+        name: WAKEUP
+        description: Exite sleep mode.
+    0x4F:
+        name: UPDATE_BRIDGE
+        description: Hell if I know what this does.
+    0x43:
+        name: CALIBRATE
+        description: Calibrate compass for accuracy
+    0x45:
+        name: END_CALIBRATE
+        description: Finish calibration cycle.
+    0x4C:
+        name: SAVE_OP
+        description: Save OP mode to EEPROM.
+    0x41:
+        name: READ
+        description: Get current compass heading.
+        
