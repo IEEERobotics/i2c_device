@@ -14,7 +14,7 @@ t0 = time.time()
 print "Begin"
 while True:
     elapsed = time.time() - t0
-    value = dev.analog_read()
+    value = analog_read()
     print "[{:8.3f}]: {:5.3f}".format(elapsed, value)
     time.sleep(0.1)
 print "Done"
