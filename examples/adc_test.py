@@ -4,10 +4,14 @@ import time
 import os, sys
 import i2c_device
 
+
+def analog_read():
+        return dev.registers['ADDR'].read()
+
+
 dev = i2c_device.I2CDevice(1,0x48
             ,config='adc_ads7830_i2c.yaml')
-def analog_read(self):
-        return dev.registers['ADDR'].read()
+
 
 
 t0 = time.time()
