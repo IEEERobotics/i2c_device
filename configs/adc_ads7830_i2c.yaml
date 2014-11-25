@@ -8,6 +8,8 @@ registers:
         description: Read value of currently selected channel.
     0x48:
         name: ADDR
+        access: [read]
+        type: byte
 command:
     7:
         name: SD
