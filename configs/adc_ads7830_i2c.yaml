@@ -9,7 +9,7 @@ registers:
     0x48:
         name: ADDR
         access: [read]
-        type: byte
+        type: uint16
 command:
     7:
         name: SD
