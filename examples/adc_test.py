@@ -4,7 +4,8 @@ import time
 import os, sys
 import i2c_device
 
-dev = i2c_device.I2CDevice(1,0x29,config='tcs3472_i2c.yaml')
+dev = i2c_device.I2CDevice(1,0x48
+            ,config='adc_ads7830_i2c.yaml')
 def analog_read(self):
         return self.registers['ADDR'].read()
 
