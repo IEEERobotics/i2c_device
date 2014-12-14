@@ -45,7 +45,7 @@ command:
         values:
             0: DIFFERENTIAL
             1: SINGLE_ENDED
-    6: #[6:5]
+    6: #[6:4]
         name: CHANNEL
             length: 3
             # May not be necessary, just channel selection.
