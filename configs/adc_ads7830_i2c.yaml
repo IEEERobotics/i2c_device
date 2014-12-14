@@ -7,63 +7,35 @@ command:
 
 
 registers:
-    7:
-        name: SD
-        length: 1
-        values:
-            0: DIFFERENTIAL
-            1: SINGLE_ENDED
-    6: #[6:4]
-        name: CHANNEL
-            length: 3
-            # Selection of C2-C0 bits, control selection ADC channel
-            # Shifted by 4 due to location in CMD byte.
-            # 
-                registers:
-                    0x0 << 4:
-                        name: CH0
-                        access: [read]
-                        type: uint8
-                    0x01 << 4:
-                        name: CH1
-                        access: [read]
-                        type: uint8
-                    0x02 << 4:
-                        name: CH2
-                        access: [read]
-                        type: uint8
-                    0x03 << 4:
-                        name: 3
-                        access: [read]
-                        type: uint8
-                    0x04 << 4:
-                        name: CH4
-                        access: [read]
-                        type: uint8
-                    0x05 << 4:
-                        name: CH5
-                        access: [read]
-                        type: uint8
-                    0x06 << 4:
-                        name: CH6
-                        access: [read]
-                        type: uint8
-                    0x07 << 4:
-                        name: CH7
-                        access: [read]
-                        type: uint8
-                    
-    # Manual lists [3,2] as PD, split up for clarity.
-    # Consider re-merging them if this doesn't work.
-    3: 
-        name: INTERNAL_REF
-        length: 1
-            values: 
-                0: OFF
-                1: ON
-    2:
-        name: AD_CONV        
-        length: 1
-        values:
-            0: OFF
-            1: ON
+    0x00 << 4:
+        name: CH0
+        access: [read]
+        type: uint8
+    0x01 << 4:
+        name: CH1
+        access: [read]
+        type: uint8
+    0x02 << 4:
+        name: CH2
+        access: [read]
+        type: uint8
+    0x03 << 4:
+        name: 3
+        access: [read]
+        type: uint8
+    0x04 << 4:
+        name: CH4
+        access: [read]
+        type: uint8
+    0x05 << 4:
+        name: CH5
+        access: [read]
+        type: uint8
+    0x06 << 4:
+        name: CH6
+        access: [read]
+        type: uint8
+    0x07 << 4:
+        name: CH7
+        access: [read]
+        type: uint8
