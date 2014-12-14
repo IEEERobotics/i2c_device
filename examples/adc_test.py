@@ -3,21 +3,18 @@
 import time
 import os, sys
 
-Updated upstream
-def analog_read():
-        return dev.registers['READ'].read()
 
 import smbus
 import i2c_device
 
-bus = smbus.SMBus(1)
-t0 = time.time()
+dev = i2c_device.I2CDevice(1,0x48,config='adc_ads7830_i2c.yaml')
 
+t0 = time.time()
 
 print "Begin"
 while True:
     elapsed = time.time() - t0
-    value = analog_read()
+    value = dev.registers['CH1'].read()
     print "Elapsed: ", elapsed, "Value: ", value
     time.sleep(0.1)
 
