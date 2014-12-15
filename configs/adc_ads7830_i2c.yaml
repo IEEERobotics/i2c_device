@@ -16,40 +16,7 @@ command:
             length: 3
             # Selection of C2-C0 bits, control selection ADC channel
             # Shifted by 4 due to location in CMD byte.
-                registers:
-                    0x0 << 4:
-                        name: CH0
-                        access: [read]
-                        type: uint8
-                    0x10:
-                        name: CH1
-                        access: [read]
-                        type: uint8
-                    0x20:
-                        name: CH2
-                        access: [read]
-                        type: uint8
-                    0x30:
-                        name: 3
-                        access: [read]
-                        type: uint8
-                    0x40:
-                        name: CH4
-                        access: [read]
-                        type: uint8
-                    0x50:
-                        name: CH5
-                        access: [read]
-                        type: uint8
-                    0x60:
-                        name: CH6
-                        access: [read]
-                        type: uint8
-                    0x70
-                        name: CH7
-                        access: [read]
-                        type: uint8
-                    
+               
     # Manual lists [3,2] as PD, split up for clarity.
     # Consider re-merging them if this doesn't work.
     3: 
@@ -64,3 +31,37 @@ command:
         values:
             0: OFF
             1: ON
+ registers:
+    0x00:
+        name: CH0
+        access: [read]
+        type: uint8
+    0x10:
+        name: CH1
+        access: [read]
+        type: uint8
+    0x20:
+        name: CH2
+        access: [read]
+        type: uint8
+    0x30:
+        name: 3
+        access: [read]
+        type: uint8
+    0x40:
+        name: CH4
+        access: [read]
+        type: uint8
+    0x50:
+        name: CH5
+        access: [read]
+        type: uint8
+    0x60:
+        name: CH6
+        access: [read]
+        type: uint8
+    0x70
+        name: CH7
+        access: [read]
+        type: uint8
+    
