@@ -21,31 +21,31 @@ command:
                         name: CH0
                         access: [read]
                         type: uint8
-                    0x01 << 4:
+                    0x10:
                         name: CH1
                         access: [read]
                         type: uint8
-                    0x02 << 4:
+                    0x20:
                         name: CH2
                         access: [read]
                         type: uint8
-                    0x03 << 4:
+                    0x30:
                         name: 3
                         access: [read]
                         type: uint8
-                    0x04 << 4:
+                    0x40:
                         name: CH4
                         access: [read]
                         type: uint8
-                    0x05 << 4:
+                    0x50:
                         name: CH5
                         access: [read]
                         type: uint8
-                    0x06 << 4:
+                    0x60:
                         name: CH6
                         access: [read]
                         type: uint8
-                    0x07 << 4:
+                    0x70
                         name: CH7
                         access: [read]
                         type: uint8
