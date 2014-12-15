@@ -45,7 +45,7 @@ command:
         access: [read]
         type: uint8
     0x30:
-        name: 3
+        name: CH3
         access: [read]
         type: uint8
     0x40:
@@ -60,7 +60,7 @@ command:
         name: CH6
         access: [read]
         type: uint8
-    0x70
+    0x70:
         name: CH7
         access: [read]
         type: uint8
